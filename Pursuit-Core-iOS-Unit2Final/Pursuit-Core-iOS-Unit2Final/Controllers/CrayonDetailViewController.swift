@@ -46,6 +46,19 @@ class CrayonDetailViewController: UIViewController {
 
     }
     
+    @IBAction func sliderChanged(_ sender: UISlider) {
+       sliderLabel.text = Int(sender.value).description
+    }
+    
+    @IBAction func slider2Changed(_ sender: UISlider) {
+        sliderLabel2.text = Int(sender.value).description
+    }
+    
    
-
+    @IBAction func stepperChanged(_ sender: UIStepper) {
+        stepperLabel.text = Int(sender.value).description
+        
+    }
+   
+    
 }
