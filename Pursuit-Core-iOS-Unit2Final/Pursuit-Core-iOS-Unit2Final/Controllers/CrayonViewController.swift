@@ -39,13 +39,10 @@ extension CrayonViewController: UITableViewDelegate {
     func  tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "CrayonCell", for: indexPath)
         let crayon = crayons[indexPath.row]
-       let color = UIColor(displayP3Red: 0xFF, green: 0xFF, blue: 0xFF, alpha: 1.0)
+        let colors = UIColor.init(displayP3Red: CGFloat(crayon.red/255), green:CGFloat(crayon.green/255), blue:CGFloat(crayon.blue/255), alpha: 1.0)
         cell.textLabel?.text = crayon.name
         cell.detailTextLabel?.text = crayon.hex
-//        cell.backgroundColor = UIColor.red
-//        cell.backgroundColor = UIColor.green
-//        cell.backgroundColor = UIColor.blue
-//
+        cell.backgroundColor = colors
     
         return cell
     }
