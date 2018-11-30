@@ -24,6 +24,7 @@ class CrayonDetailViewController: UIViewController {
     @IBOutlet weak var sliderLabel3: UILabel!
     
     @IBOutlet var background: UIView!
+    @IBOutlet weak var resetButton: UIButton!
     
     var currentSliderValue: Double = 1.0
     var red:CGFloat = 0.0
@@ -55,7 +56,7 @@ class CrayonDetailViewController: UIViewController {
         sliderControl3.minimumValue = 0
         sliderControl3.maximumValue = 10
         
-        
+        resetButton.text
        
     
 
@@ -104,7 +105,7 @@ class CrayonDetailViewController: UIViewController {
         self.view.backgroundColor = backgroundColor
 
 }
-   
+
     
     @IBAction func stepperChanged(_ sender: UIStepper) {
        stepperLabel.text = Double(sender.value).description
@@ -139,33 +140,17 @@ class CrayonDetailViewController: UIViewController {
         self.view.backgroundColor = backgroundColor
         
     }
-
+    @IBAction func resetButton(_ sender: UIButton) {
+        let storyboard = UIStoryboard(name: "Main", bundle: nil)
+        let vc = storyboard.instantiateViewController(withIdentifier: "ViewController")
+        var viewcontrollers = self.navigationController!.viewControllers
+        viewcontrollers.removeLast()
+        viewcontrollers.append(vc)
+        self.navigationController?.setViewControllers(viewcontrollers, animated: true)
+    }
+    
 }
     
     
 
-
-
-//IBAction func redSliderChanged(_ sender: UISlider) {
-//    redLabel.text = Double(sender.value).description
-//    self.view.backgroundColor = UIColor.init(displayP3Red: CGFloat(redSlider.value / 255), green: CGFloat(greenSlider.value / 255), blue: CGFloat(blueSlider.value / 255), alpha: 1)
-//}
-//@IBAction func greenSliderChanged(_ sender: UISlider) {
-//    greenLabel.text = Double(sender.value).description
-//    self.view.backgroundColor = UIColor.init(displayP3Red: CGFloat(redSlider.value / 255), green: CGFloat(greenSlider.value / 255), blue: CGFloat(blueSlider.value / 255), alpha: 1)
-//}
-//@IBAction func blueSliderChanged(_ sender: UISlider) {
-//    blueLabel.text = Double(sender.value).description
-//    self.view.backgroundColor = UIColor.init(displayP3Red: CGFloat(redSlider.value / 255), green: CGFloat(greenSlider.value / 255), blue: CGFloat(blueSlider.value / 255), alpha: 1)
-//}
-//@IBAction func alphaStepperChanged(_ sender: UIStepper) {
-//    alphaLabel.text = Double(sender.value).description
-//}
-//
-//
-//
-//}
-//
-//
-//}
 

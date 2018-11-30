@@ -25,7 +25,7 @@ class CrayonViewController: UIViewController {
 override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         guard let indexPath = tableView.indexPathForSelectedRow,
             let CrayonDetailViewController = segue.destination as?
-            CrayonDetailViewController else { fatalError("indexPath, recipesDVC nil") }
+            CrayonDetailViewController else { fatalError("indexPath, DVC nil") }
         let crayon = crayons[indexPath.row]
     CrayonDetailViewController.crayon = crayon
     
