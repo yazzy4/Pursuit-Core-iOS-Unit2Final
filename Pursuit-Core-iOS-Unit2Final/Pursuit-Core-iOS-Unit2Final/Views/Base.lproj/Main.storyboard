@@ -78,7 +78,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="S5c-Nf-H0P">
-                                <rect key="frame" x="0.0" y="133" width="375" height="21"/>
+                                <rect key="frame" x="0.0" y="133" width="375" height="24"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <nil key="textColor"/>
@@ -92,7 +92,7 @@
                                 </connections>
                             </slider>
                             <slider opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" value="0.5" minValue="0.0" maxValue="1" translatesAutoresizingMaskIntoConstraints="NO" id="Rl5-f3-BK2">
-                                <rect key="frame" x="14" y="342" width="180" height="30"/>
+                                <rect key="frame" x="14" y="319" width="180" height="30"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <connections>
                                     <action selector="slider2Changed:" destination="ghQ-zp-Elo" eventType="valueChanged" id="lh1-Ab-INt"/>
@@ -106,36 +106,53 @@
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ZsI-PV-xxs">
-                                <rect key="frame" x="276" y="346" width="83" height="25"/>
+                                <rect key="frame" x="276" y="323" width="83" height="25"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="2eA-Cy-Bcf">
-                                <rect key="frame" x="276" y="452" width="83" height="25"/>
+                                <rect key="frame" x="276" y="487" width="83" height="25"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <stepper opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" maximumValue="100" translatesAutoresizingMaskIntoConstraints="NO" id="YjK-KA-UyP">
-                                <rect key="frame" x="16" y="452" width="94" height="29"/>
+                                <rect key="frame" x="16" y="485" width="94" height="29"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <connections>
                                     <action selector="stepperChanged:" destination="ghQ-zp-Elo" eventType="valueChanged" id="0g1-AQ-WnR"/>
                                 </connections>
                             </stepper>
+                            <slider opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" value="0.5" minValue="0.0" maxValue="1" translatesAutoresizingMaskIntoConstraints="NO" id="ehH-rH-uM7">
+                                <rect key="frame" x="14" y="399" width="178" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <connections>
+                                    <action selector="slider3Changed:" destination="ghQ-zp-Elo" eventType="valueChanged" id="VZ2-K6-740"/>
+                                </connections>
+                            </slider>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Amp-bn-cIt">
+                                <rect key="frame" x="276" y="407" width="60" height="21"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <viewLayoutGuide key="safeArea" id="gbv-Ew-FPX"/>
                     </view>
                     <connections>
+                        <outlet property="background" destination="Yaf-zS-i3m" id="AvF-hH-h2m"/>
                         <outlet property="colorLabel" destination="S5c-Nf-H0P" id="AE6-4I-IaW"/>
                         <outlet property="sliderControl" destination="qew-x4-OHe" id="P7t-vQ-HU7"/>
                         <outlet property="sliderControl2" destination="Rl5-f3-BK2" id="Vr6-VX-bWj"/>
+                        <outlet property="sliderControl3" destination="ehH-rH-uM7" id="Qoe-f1-YoV"/>
                         <outlet property="sliderLabel" destination="U2a-3n-gvm" id="7ch-SQ-gXB"/>
                         <outlet property="sliderLabel2" destination="ZsI-PV-xxs" id="7aq-ar-dzJ"/>
+                        <outlet property="sliderLabel3" destination="Amp-bn-cIt" id="WL0-ZH-OKW"/>
                         <outlet property="stepperControl" destination="YjK-KA-UyP" id="UQR-sG-sBE"/>
                         <outlet property="stepperLabel" destination="2eA-Cy-Bcf" id="JwT-T7-WhJ"/>
                     </connections>

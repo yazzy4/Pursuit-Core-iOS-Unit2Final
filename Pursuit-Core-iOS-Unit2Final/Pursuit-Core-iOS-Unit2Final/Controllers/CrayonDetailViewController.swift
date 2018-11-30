@@ -13,22 +13,21 @@ class CrayonDetailViewController: UIViewController {
     public var crayon: Crayon?
     
     @IBOutlet weak var colorLabel: UILabel!
-    
     @IBOutlet weak var sliderControl: UISlider!
-    
     @IBOutlet weak var sliderLabel: UILabel!
-    
     @IBOutlet weak var sliderControl2: UISlider!
-    
     @IBOutlet weak var sliderLabel2: UILabel!
-    
     @IBOutlet weak var stepperControl: UIStepper!
-    
     @IBOutlet weak var stepperLabel: UILabel!
+    @IBOutlet weak var sliderControl3: UISlider!
+    @IBOutlet weak var sliderLabel3: UILabel!
+    
+    @IBOutlet var background: UIView!
     
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        updateCrayonUI()
         
         sliderLabel.text = "0"
         sliderControl.value = 0
@@ -43,8 +42,30 @@ class CrayonDetailViewController: UIViewController {
         stepperLabel.text = "0"
         stepperControl.minimumValue = 0
         stepperControl.maximumValue = 20
+        
+        
+        sliderLabel3.text = "0"
+        sliderControl3.value = 0
+        sliderControl3.minimumValue = 0
+        sliderControl3.maximumValue = 10
 
     }
+    
+    public func updateCrayonUI(){
+        colorLabel.text = crayon?.name
+        let colors = UIColor.init(displayP3Red: CGFloat(crayon!.red/255), green:CGFloat(crayon!.green/255), blue:CGFloat(crayon!.blue/255), alpha: 1.0)
+        background.backgroundColor = colors
+        
+         
+        
+    }
+
+//    private func updateRecipeUI() {
+//        crayonImage.image = recipe?.image
+//        recipeName.text = recipe?.name
+//        recipeDescription.text = recipe?.description
+//    }
+    
     
     @IBAction func sliderChanged(_ sender: UISlider) {
        sliderLabel.text = Int(sender.value).description
@@ -60,5 +81,10 @@ class CrayonDetailViewController: UIViewController {
         
     }
    
+    @IBAction func slider3Changed(_ sender: UISlider) {
+        sliderLabel3.text = Int(sender.value).description
+    }
+    
+    
     
 }
