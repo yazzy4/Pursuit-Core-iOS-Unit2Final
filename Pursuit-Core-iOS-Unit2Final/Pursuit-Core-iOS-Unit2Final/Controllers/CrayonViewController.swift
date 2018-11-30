@@ -15,16 +15,21 @@ class CrayonViewController: UIViewController {
     @IBOutlet weak var tableView: UITableView!
     
 
-    
-/*    Set the background color of the rows by building a UIColor from with the Crayon model's red, green, and blue properties and set the textLabel's text to the color name */
-
-    
     override func viewDidLoad() {
     super.viewDidLoad()
         tableView.dataSource = self
         tableView.delegate = self
         
+
   }
+override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        guard let indexPath = tableView.indexPathForSelectedRow,
+            let CrayonDetailViewController = segue.destination as?
+            CrayonDetailViewController else { fatalError("indexPath, recipesDVC nil") }
+        let crayon = crayons[indexPath.row]
+    CrayonDetailViewController.crayon = crayon
+    
+    }
 
 
 }
@@ -47,5 +52,7 @@ extension CrayonViewController: UITableViewDelegate {
         return cell
     }
 }
+
+
 
 
